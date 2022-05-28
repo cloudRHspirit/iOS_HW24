@@ -1,9 +1,3 @@
-//
-//  LogHabitCollectionViewController.swift
-//  Habits
-//
-//  Created by Roman Hural on 28.05.2022.
-//
 
 import UIKit
 
@@ -14,13 +8,9 @@ class LogHabitCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+
     }
 
     /*

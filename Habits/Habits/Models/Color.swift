@@ -1,13 +1,9 @@
-//
-//  Color.swift
-//  Habits
-//
-//  Created by Roman Hural on 28.05.2022.
-//
-
+//MARK: - Importing Frameworks
 import Foundation
 
+//MARK: - Structures
 struct Color {
+    //MARK: - Properties
     let hue: Double
     let saturation: Double
     let brightness: Double
