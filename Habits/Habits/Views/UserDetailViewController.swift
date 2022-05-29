@@ -33,6 +33,13 @@ class UserDetailViewController: UIViewController {
         userNameLabel.text = user.name
         bioLabel.text = user.bio
         
+        imageRequestTask = Task {
+            if let image = try? await ImageRequest(imageID: user.id).send() {
+                self.profileImageView.image = image
+            }
+            imageRequestTask = nil
+        }
+        
         collectionView.register(NamedSectionHeaderView.self,
                                 forSupplementaryViewOfKind: SectionHeader.kind.identifier,
                                 withReuseIdentifier: SectionHeader.reuse.identifier)

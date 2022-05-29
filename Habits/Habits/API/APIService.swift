@@ -1,5 +1,5 @@
 //MARK: - Importing Frameworks
-import Foundation
+import UIKit
 
 //MARK: - Structures
 struct HabitRequest: APIRequest {
@@ -51,5 +51,13 @@ struct HabitLeadStatisticsRequest: APIRequest {
     
     var userID: String
     var path: String { "/userLeadingStats/\(userID)" }
+}
+
+struct ImageRequest: APIRequest {
+    typealias Response = UIImage
+    
+    var imageID: String
+    
+    var path: String { "/images/" + imageID }
 }
 
