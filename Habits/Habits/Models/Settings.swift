@@ -15,6 +15,15 @@ struct Settings {
         }
     }
     
+    var followedUserIDs: [String] {
+        get {
+            return unarchiveJSON(key: Setting.followedUserIDs) ?? []
+        }
+        set {
+            archiveJSON(value: newValue, key: Setting.followedUserIDs)
+        }
+    }
+    
     mutating func toggleFavorite(_ habit: Habit) {
         var favorites = favoriteHabits
         
@@ -25,6 +34,18 @@ struct Settings {
         }
         
         favoriteHabits = favorites
+    }
+    
+    mutating func toggleFollowed(user: User) {
+        var updated = followedUserIDs
+        
+        if updated.contains(user.id) {
+            updated = updated.filter { $0 != user.id }
+        } else {
+            updated.append(user.id)
+        }
+        
+        followedUserIDs = updated
     }
     
     //MARK: - Private Methods
@@ -46,4 +67,5 @@ struct Settings {
 //MARK: - Enums
 enum Setting {
     static let favoriteHabits = "favoriteHabits"
+    static let followedUserIDs = "followedUserIDs"
 }
