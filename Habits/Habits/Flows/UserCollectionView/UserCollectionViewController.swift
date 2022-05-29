@@ -40,6 +40,7 @@ class UserCollectionViewController: UICollectionViewController {
         }
     }
     
+    //MARK: - Properties
     var dataSource: DataSourceType!
     var model = Model()
     
