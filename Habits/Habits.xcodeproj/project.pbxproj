@@ -13,6 +13,7 @@
 		D290DFD62843E419003C4F6F /* UserStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD52843E419003C4F6F /* UserStatistics.swift */; };
 		D290DFD82843E449003C4F6F /* HabitCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD72843E449003C4F6F /* HabitCount.swift */; };
 		D290DFDB2843EF0F003C4F6F /* ImageRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFDA2843EF0F003C4F6F /* ImageRequestError.swift */; };
+		D290DFDD2843F4E3003C4F6F /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFDC2843F4E3003C4F6F /* LoggedHabit.swift */; };
 		D2AC4BA428425E0E008CF890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC4BA328425E0E008CF890 /* AppDelegate.swift */; };
 		D2AC4BA628425E0E008CF890 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC4BA528425E0E008CF890 /* SceneDelegate.swift */; };
 		D2AC4BAB28425E0E008CF890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AC4BA928425E0E008CF890 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		D290DFD52843E419003C4F6F /* UserStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatistics.swift; sourceTree = "<group>"; };
 		D290DFD72843E449003C4F6F /* HabitCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCount.swift; sourceTree = "<group>"; };
 		D290DFDA2843EF0F003C4F6F /* ImageRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestError.swift; sourceTree = "<group>"; };
+		D290DFDC2843F4E3003C4F6F /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
 		D2AC4BA028425E0E008CF890 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AC4BA328425E0E008CF890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AC4BA528425E0E008CF890 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				D290DFD328439783003C4F6F /* UserCount.swift */,
 				D290DFD52843E419003C4F6F /* UserStatistics.swift */,
 				D290DFD72843E449003C4F6F /* HabitCount.swift */,
+				D290DFDC2843F4E3003C4F6F /* LoggedHabit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				D2AC4BBE28426A65008CF890 /* LogHabitCollectionViewController.swift in Sources */,
 				D290DFD82843E449003C4F6F /* HabitCount.swift in Sources */,
 				D2FEB4DD28428F7A0009503D /* ViewModel.swift in Sources */,
+				D290DFDD2843F4E3003C4F6F /* LoggedHabit.swift in Sources */,
 				D2AC4BC428426D3D008CF890 /* Habit.swift in Sources */,
 				D2AC4BC028426B84008CF890 /* HabitDetailViewController.swift in Sources */,
 				D2FEB4E52842A5980009503D /* NamedSectionHeaderView.swift in Sources */,

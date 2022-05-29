@@ -6,6 +6,11 @@ struct Settings {
     static var shared = Settings()
     private let defaults = UserDefaults.standard
     
+    let currentUser = User(id: "ID",
+                           name: "User",
+                           color: nil,
+                           bio: "Bio")
+    
     var favoriteHabits: [Habit] {
         get {
             return unarchiveJSON(key: Setting.favoriteHabits) ?? []
