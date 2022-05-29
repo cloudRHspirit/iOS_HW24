@@ -20,4 +20,3 @@ enum ViewModel {
     }
     typealias Item = Habit
 }
-

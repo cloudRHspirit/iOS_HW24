@@ -19,3 +19,8 @@ struct UserCount {
 extension UserCount: Codable { }
 extension UserCount: Hashable { }
 
+extension HabitCount: Comparable {
+    static func < (lhs: HabitCount, rhs: HabitCount) -> Bool {
+        return lhs.habit < rhs.habit
+    }
+}

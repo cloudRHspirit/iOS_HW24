@@ -10,6 +10,8 @@
 		D290DFCF28438BB5003C4F6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFCE28438BB5003C4F6F /* User.swift */; };
 		D290DFD128439734003C4F6F /* HabitStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD028439734003C4F6F /* HabitStatistics.swift */; };
 		D290DFD428439783003C4F6F /* UserCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD328439783003C4F6F /* UserCount.swift */; };
+		D290DFD62843E419003C4F6F /* UserStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD52843E419003C4F6F /* UserStatistics.swift */; };
+		D290DFD82843E449003C4F6F /* HabitCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290DFD72843E449003C4F6F /* HabitCount.swift */; };
 		D2AC4BA428425E0E008CF890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC4BA328425E0E008CF890 /* AppDelegate.swift */; };
 		D2AC4BA628425E0E008CF890 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC4BA528425E0E008CF890 /* SceneDelegate.swift */; };
 		D2AC4BAB28425E0E008CF890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AC4BA928425E0E008CF890 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		D290DFCE28438BB5003C4F6F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D290DFD028439734003C4F6F /* HabitStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatistics.swift; sourceTree = "<group>"; };
 		D290DFD328439783003C4F6F /* UserCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCount.swift; sourceTree = "<group>"; };
+		D290DFD52843E419003C4F6F /* UserStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatistics.swift; sourceTree = "<group>"; };
+		D290DFD72843E449003C4F6F /* HabitCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCount.swift; sourceTree = "<group>"; };
 		D2AC4BA028425E0E008CF890 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AC4BA328425E0E008CF890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2AC4BA528425E0E008CF890 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AC4BB128425E0F008CF890 /* Info.plist */,
+				D2AC4BAC28425E0F008CF890 /* Assets.xcassets */,
 				D2FEB4D5284276D30009503D /* Common */,
 				D2AC4BCB28426E72008CF890 /* Views */,
 				D2AC4BCA28426E6C008CF890 /* Flows */,
@@ -104,10 +109,8 @@
 				D2FEB4D62842786E0009503D /* API */,
 				D2AC4BA528425E0E008CF890 /* SceneDelegate.swift */,
 				D2AC4BA328425E0E008CF890 /* AppDelegate.swift */,
-				D2AC4BA928425E0E008CF890 /* Main.storyboard */,
 				D2AC4BAE28425E0F008CF890 /* LaunchScreen.storyboard */,
-				D2AC4BAC28425E0F008CF890 /* Assets.xcassets */,
-				D2FEB4E42842A5980009503D /* NamedSectionHeaderView.swift */,
+				D2AC4BA928425E0E008CF890 /* Main.storyboard */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -124,6 +127,8 @@
 				D290DFCE28438BB5003C4F6F /* User.swift */,
 				D290DFD028439734003C4F6F /* HabitStatistics.swift */,
 				D290DFD328439783003C4F6F /* UserCount.swift */,
+				D290DFD52843E419003C4F6F /* UserStatistics.swift */,
+				D290DFD72843E449003C4F6F /* HabitCount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		D2AC4BCB28426E72008CF890 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2FEB4E42842A5980009503D /* NamedSectionHeaderView.swift */,
 				D2AC4BC128426B94008CF890 /* UserDetailViewController.swift */,
 				D2AC4BBF28426B84008CF890 /* HabitDetailViewController.swift */,
 			);
@@ -279,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FEB4D8284289920009503D /* ApiRequestError.swift in Sources */,
+				D290DFD62843E419003C4F6F /* UserStatistics.swift in Sources */,
 				D2AC4BB828426A32008CF890 /* HomeCollectionViewController.swift in Sources */,
 				D2AC4BC628426D48008CF890 /* Category.swift in Sources */,
 				D2FEB4E1284295300009503D /* Settings.swift in Sources */,
@@ -293,6 +300,7 @@
 				D2FEB4DA28428B5C0009503D /* APIService.swift in Sources */,
 				D2FEB4E72842A8090009503D /* SectionHeader.swift in Sources */,
 				D2AC4BBE28426A65008CF890 /* LogHabitCollectionViewController.swift in Sources */,
+				D290DFD82843E449003C4F6F /* HabitCount.swift in Sources */,
 				D2FEB4DD28428F7A0009503D /* ViewModel.swift in Sources */,
 				D2AC4BC428426D3D008CF890 /* Habit.swift in Sources */,
 				D2AC4BC028426B84008CF890 /* HabitDetailViewController.swift in Sources */,

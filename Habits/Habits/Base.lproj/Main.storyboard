@@ -257,7 +257,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="128" height="128"/>
                                 <connections>
-                                    <segue destination="lhp-VN-GYg" kind="show" id="31Z-KW-1Qz"/>
+                                    <segue destination="lhp-VN-GYg" kind="show" destinationCreationSelector="showUserDetail:sender:" id="31Z-KW-1Qz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -335,23 +335,95 @@
                     <view key="view" contentMode="scaleToFill" id="gJn-6S-ghX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-Ei-Dh4">
+                                <rect key="frame" x="16" y="108" width="382" height="158.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-yI-E3c">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="124"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d3x-0c-HNb">
+                                                <rect key="frame" x="0.0" y="1.5" width="124" height="121"/>
+                                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="d3x-0c-HNb" secondAttribute="height" multiplier="1:1" id="fGe-4a-gVf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCW-w4-MYf">
+                                                <rect key="frame" x="144" y="43.5" width="238" height="37"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yf-Lw-mnB">
+                                        <rect key="frame" x="0.0" y="144" width="382" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-gh-WMY">
+                                <rect key="frame" x="0.0" y="286.5" width="414" height="526.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e8p-za-Git">
+                                    <size key="itemSize" width="414" height="44"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HabitCount" id="JNB-pz-Lh3" customClass="UICollectionViewListCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9fa-qD-nuk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="44"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Yen-lz-0iA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pGJ-gh-WMY" firstAttribute="top" secondItem="DoE-Ei-Dh4" secondAttribute="bottom" constant="20" id="5kh-4g-95o"/>
+                            <constraint firstItem="pGJ-gh-WMY" firstAttribute="leading" secondItem="Yen-lz-0iA" secondAttribute="leading" id="NwK-Bo-MUO"/>
+                            <constraint firstItem="Yen-lz-0iA" firstAttribute="bottom" secondItem="pGJ-gh-WMY" secondAttribute="bottom" id="ZZh-m5-4US"/>
+                            <constraint firstItem="DoE-Ei-Dh4" firstAttribute="leading" secondItem="Yen-lz-0iA" secondAttribute="leading" constant="16" id="eE9-oR-x9Y"/>
+                            <constraint firstItem="DoE-Ei-Dh4" firstAttribute="top" secondItem="Yen-lz-0iA" secondAttribute="top" constant="20" id="grQ-pS-nGm"/>
+                            <constraint firstItem="d3x-0c-HNb" firstAttribute="width" secondItem="gJn-6S-ghX" secondAttribute="width" multiplier="0.3" id="iQf-iX-Uar"/>
+                            <constraint firstItem="Yen-lz-0iA" firstAttribute="trailing" secondItem="pGJ-gh-WMY" secondAttribute="trailing" id="jwv-fv-XEo"/>
+                            <constraint firstItem="Yen-lz-0iA" firstAttribute="trailing" secondItem="DoE-Ei-Dh4" secondAttribute="trailing" constant="16" id="rn5-CV-oc4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jCB-Eo-YBL"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="3Yf-Lw-mnB" id="fOU-Ch-dEV"/>
+                        <outlet property="collectionView" destination="pGJ-gh-WMY" id="Xng-Wb-kmZ"/>
+                        <outlet property="profileImageView" destination="d3x-0c-HNb" id="u6S-ld-tIl"/>
+                        <outlet property="userNameLabel" destination="XCW-w4-MYf" id="apx-2i-i5R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3F-Tj-YeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="1438"/>
+            <point key="canvasLocation" x="2198.5507246376815" y="1437.7232142857142"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

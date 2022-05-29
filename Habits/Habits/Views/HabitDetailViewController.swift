@@ -59,6 +59,7 @@ class HabitDetailViewController: UIViewController {
     var habit: Habit!
     
     var updateTimer: Timer?
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
