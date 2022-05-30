@@ -5,7 +5,6 @@ import UIKit
 protocol APIRequest {
     associatedtype Response
     
-    //MARK: - Properties
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
     var request: URLRequest { get }
@@ -14,19 +13,16 @@ protocol APIRequest {
 
 //MARK: - Extensions
 extension APIRequest {
-    //MARK: - Properties
     var host: String { "localhost" }
     var port: Int { 8080 }
 }
 
 extension APIRequest {
-    //MARK: - Properties
     var queryItems: [URLQueryItem]? { nil }
     var postData: Data? { nil }
 }
 
 extension APIRequest {
-    //MARK: - Properties
     var request: URLRequest {
         var components = URLComponents()
         
@@ -48,7 +44,6 @@ extension APIRequest {
 }
 
 extension APIRequest where Response: Decodable {
-    //MARK: - Methods
     func send() async throws -> Response {
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse,
@@ -83,7 +78,7 @@ extension APIRequest {
         let (_, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse,
-           httpResponse.statusCode == 200 else {
+              httpResponse.statusCode == 200 else {
             throw APIRequestError.requestFailed
         }
     }

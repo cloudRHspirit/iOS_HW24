@@ -30,4 +30,3 @@ extension UICollectionViewDiffableDataSource {
         self.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
-

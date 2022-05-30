@@ -31,6 +31,7 @@ class UserCollectionViewController: UICollectionViewController {
         }
     }
     
+    //MARK: - Structures
     struct Model {
         var usersByID = [String: User]()
         var followedUsers: [User] {
@@ -53,6 +54,14 @@ class UserCollectionViewController: UICollectionViewController {
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .quaternarySystemFill
+        tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .quaternarySystemFill
+        navigationItem.scrollEdgeAppearance = navBarAppearance
         
         update()
     }
@@ -95,6 +104,10 @@ class UserCollectionViewController: UICollectionViewController {
                                                                        trailing: 8)
             content.textProperties.alignment = .center
             cell.contentConfiguration = content
+            var backgroundConfiguration = UIBackgroundConfiguration.clear()
+            backgroundConfiguration.backgroundColor = item.user.color?.uiColor ?? UIColor.systemGray4
+            cell.backgroundConfiguration = backgroundConfiguration
+            backgroundConfiguration.cornerRadius = 8 
             
             return cell
         }
@@ -140,7 +153,7 @@ class UserCollectionViewController: UICollectionViewController {
         return config
     }
     
-    
+    //MARK: - Actions
     @IBSegueAction func showUserDetail(_ coder: NSCoder, sender: UICollectionViewCell?) -> UserDetailViewController? {
         guard let cell = sender,
               let indexPath = collectionView.indexPath(for: cell),

@@ -4,6 +4,9 @@ import UIKit
 //MARK: - Private constants
 private let reuseIdentifier = "Cell"
 
+//MARK: - Instances
+let favoriteHabitColor = UIColor(hue: 0.15, saturation: 1, brightness: 0.9, alpha: 1)
+
 //MARK: - Classes
 class HabitCollectionViewController: UICollectionViewController {
     var habitsRequestTask: Task <Void, Never>? = nil
@@ -34,6 +37,33 @@ class HabitCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         update()
+    }
+    
+    enum ViewModel {
+        enum Section: Hashable, Comparable {
+            case favorites
+            case category(_ category: Category)
+            
+            static func < (lhs: Section, rhs: Section) -> Bool {
+                switch (lhs, rhs) {
+                case (.category(let l), .category(let r)):
+                    return l.name < r.name
+                case (.favorites, _):
+                    return true
+                case (_, .favorites):
+                    return false
+                }
+            }
+            var sectionColor: UIColor {
+                switch self {
+                case .favorites:
+                    return favoriteHabitColor
+                case .category(let category):
+                    return category.color.uiColor
+                }
+            }
+        }
+        typealias Item = Habit
     }
     
     //MARK: - Methods
@@ -90,6 +120,8 @@ class HabitCollectionViewController: UICollectionViewController {
             case .category(let category):
                 header.nameLabel.text = category.name
             }
+            
+            header.backgroundColor = section.sectionColor
             return header
         }
         return dataSource
@@ -116,6 +148,12 @@ class HabitCollectionViewController: UICollectionViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    func configureCell(_ cell: UICollectionViewListCell, withItem item:ViewModel.Item) {
+        var content = cell.defaultContentConfiguration()
+        content.text = item.name
+        cell.contentConfiguration = content
+    }
+    
     //MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
@@ -137,6 +175,7 @@ class HabitCollectionViewController: UICollectionViewController {
         return config
     }
     
+    //MARK: - Actions
     @IBSegueAction func showHabitDetail(_ coder: NSCoder, sender: UICollectionViewCell?) -> HabitDetailViewController? {
         guard let cell = sender,
               let indexPath = collectionView.indexPath(for: cell),

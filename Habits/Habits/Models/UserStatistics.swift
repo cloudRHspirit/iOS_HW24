@@ -9,4 +9,3 @@ struct UserStatistics {
 
 //MARK: - Extensions
 extension UserStatistics: Codable { }
-

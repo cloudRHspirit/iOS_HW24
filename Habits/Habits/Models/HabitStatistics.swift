@@ -9,4 +9,3 @@ struct HabitStatistics {
 
 //MARK: - Extensions
 extension HabitStatistics: Codable { }
-

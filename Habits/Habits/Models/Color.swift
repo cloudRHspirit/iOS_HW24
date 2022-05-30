@@ -1,5 +1,5 @@
 //MARK: - Importing Frameworks
-import Foundation
+import UIKit
 
 //MARK: - Structures
 struct Color {
@@ -9,6 +9,7 @@ struct Color {
     let brightness: Double
 }
 
+//MARK: - Extensions
 extension Color: Codable {
     enum CodingKeys: String, CodingKey {
         case hue = "h"
@@ -16,3 +17,14 @@ extension Color: Codable {
         case brightness = "b"
     }
 }
+
+extension Color {
+    var uiColor: UIColor {
+        return UIColor(hue: CGFloat(hue),
+                       saturation: CGFloat(saturation),
+                       brightness: CGFloat(brightness),
+                       alpha: 1)
+    }
+}
+
+extension Color: Hashable { }
